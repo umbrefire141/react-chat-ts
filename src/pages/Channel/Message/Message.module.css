@@ -1,0 +1,44 @@
+.message {
+	overflow-x: hidden;
+	overflow-y: auto;
+	flex-direction: column;
+	width: 100%;
+	display: flex;
+}
+
+.message__wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	white-space: pre-wrap;
+	padding: 1rem;
+	align-items: flex-end;
+}
+
+.message__info {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.message__user {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.message__avatar {
+	width: 2.75rem;
+	height: 2.75rem;
+	border-radius: 9999px;
+	margin-bottom: 0.2rem;
+}
+
+.message__text {
+	max-width: 20rem;
+	background-color: hsl(210 40% 96.1%);
+	padding: 0.75rem;
+	border-radius: 0.4rem;
+}

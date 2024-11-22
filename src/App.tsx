@@ -1,7 +1,12 @@
+import CheckUser from './middlewares/checkUser';
 import AppRouter from './router/AppRouter';
 
 function App() {
-	return <AppRouter />;
+	return (
+		<CheckUser>
+			<AppRouter />
+		</CheckUser>
+	);
 }
 
 export default App;

@@ -3,15 +3,14 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useUserStore } from '../../model/user.store';
 
-export default function SignUpPage() {
+export default function SignInPage() {
 	const [email, setEmail] = useState('');
-	const [name, setName] = useState('');
 	const [password, setPassword] = useState('');
-	const { signUp } = useUserStore();
 	const navigate = useNavigate();
+	const { signIn } = useUserStore();
 
-	const signUpHandle = () => {
-		signUp({ email, name, password });
+	const signInHandle = () => {
+		signIn({ email, password });
 		navigate('/');
 	};
 
@@ -30,12 +29,6 @@ export default function SignUpPage() {
 						onChange={e => setEmail(e.target.value)}
 					/>
 					<TextField
-						label="Nickname"
-						sx={{ width: '100%' }}
-						value={name}
-						onChange={e => setName(e.target.value)}
-					/>
-					<TextField
 						label="Password"
 						type="password"
 						sx={{ width: '100%' }}
@@ -45,11 +38,11 @@ export default function SignUpPage() {
 					<Button
 						variant="contained"
 						sx={{ width: '100%' }}
-						onClick={signUpHandle}
+						onClick={signInHandle}
 					>
-						Sign up
+						Sign in
 					</Button>
-					<Link to="/auth/sign-in">Sign in, if you have an account</Link>
+					<Link to="/auth/sign-up">Sign up, if you don't have an account</Link>
 				</Stack>
 			</form>
 		</Container>
